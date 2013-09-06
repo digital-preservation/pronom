@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <groupId>uk.gov.nationalarchives.pronom</groupId>
+        <artifactId>pronom-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>pronom-parent</relativePath>
+    </parent>
+    
+    <artifactId>pronom</artifactId>
+    <packaging>pom</packaging>
+    
+    <name>${project.artifactId}</name>
+    <description>Maven module aggregation for artifacts related to PRONOM</description>
+    
+    <scm>
+        <connection>scm:git:https://github.com/digital-preservation/pronom.git</connection>
+        <developerConnection>scm:git:https://github.com/digital-preservation/pronom.git</developerConnection>
+        <url>scm:git:https://github.com/digital-preservation/pronom.git</url>
+    </scm>
+    
+    <modules>
+        <module>pronom-signature-file</module>
+        <module>pronom-container-signature-file</module>
+    </modules>
+    
+</project>
