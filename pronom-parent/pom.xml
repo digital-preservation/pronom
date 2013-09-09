@@ -71,9 +71,9 @@
                     <version>1.0</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>buildnumber-maven-plugin</artifactId>
-                    <version>1.2</version>
+                    <groupId>com.code54.mojo</groupId>
+                    <artifactId>buildversion-plugin</artifactId>
+                    <version>1.0.3</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -118,19 +118,16 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>buildnumber-maven-plugin</artifactId>
+                <groupId>com.code54.mojo</groupId>
+                <artifactId>buildversion-plugin</artifactId>
                 <executions>
                     <execution>
                         <phase>validate</phase>
                         <goals>
-                            <goal>create</goal>
+                            <goal>set-properties</goal>
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <doUpdate>false</doUpdate>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -142,8 +139,11 @@
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                         </manifest>
                         <manifestEntries>
-                            <Source-Revision>${buildNumber}</Source-Revision>
-                            <Build-Timestamp>${timestamp}</Build-Timestamp>
+                            <Build-Tag>${build-tag}</Build-Tag>
+                            <Git-Commit>${build-commit}</Git-Commit>
+                            <Git-Commit-Abbrev>${build-commit-abbrev}</Git-Commit-Abbrev>
+                            <Build-Version>${build-version}</Build-Version>
+                            <Build-Timestamp>${build-tstamp}</Build-Timestamp>
                             <Source-Repository>${project.scm.connection}</Source-Repository>
                             <Description>${project.description}</Description>
                             <Website>${project.pronom.url}</Website>
