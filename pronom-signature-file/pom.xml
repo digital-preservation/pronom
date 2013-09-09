@@ -5,7 +5,7 @@
     <parent>
         <groupId>uk.gov.nationalarchives.pronom</groupId>
         <artifactId>pronom-parent</artifactId>
-        <version>1.0</version>
+        <version>1.1-SNAPSHOT</version>
         <relativePath>../pronom-parent</relativePath>
     </parent>
     
@@ -13,7 +13,7 @@
     <packaging>jar</packaging>
     
     <!-- change this to get a newer signature file from PRONOM -->
-    <version>70</version>       
+    <version>71-SNAPSHOT</version>       
     
     
     <name>${project.artifactId}</name>
@@ -23,7 +23,7 @@
         <connection>scm:git:https://github.com/digital-preservation/pronom.git</connection>
         <developerConnection>scm:git:https://github.com/digital-preservation/pronom.git</developerConnection>
         <url>scm:git:https://github.com/digital-preservation/pronom.git</url>
-      <tag>pronom-1.0</tag>
+      <tag>HEAD</tag>
   </scm>
     
     <build>

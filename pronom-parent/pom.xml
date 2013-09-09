@@ -11,7 +11,7 @@
     <groupId>uk.gov.nationalarchives.pronom</groupId>
     <artifactId>pronom-parent</artifactId>
     <packaging>pom</packaging>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     
     <name>${project.artifactId}</name>
     <description>Maven build parent for Artifacts related to PRONOM</description>
@@ -39,7 +39,7 @@
         <connection>scm:git:https://github.com/digital-preservation/pronom.git</connection>
         <developerConnection>scm:git:https://github.com/digital-preservation/pronom.git</developerConnection>
         <url>scm:git:https://github.com/digital-preservation/pronom.git</url>
-      <tag>pronom-1.0</tag>
+      <tag>HEAD</tag>
   </scm>
     
     <properties>
