@@ -39,11 +39,43 @@
                         <configuration>
                             <url>http://www.nationalarchives.gov.uk/pronom</url>
                             <fromFile>container-signature.xml</fromFile>
-                            <toFile>${project.build.outputDirectory}/container-signature-file.xml</toFile>
+                            <toFile>${project.build.directory}/generated-resources/wagon/container-signature-file.xml</toFile>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>xml-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>transform</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <transformationSets>
+                        <transformationSet>
+                            <dir>${project.build.directory}/generated-resources/wagon</dir>
+                            <stylesheet>add-licence.xslt</stylesheet>
+                        </transformationSet>
+                    </transformationSets>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.sf.saxon</groupId>
+                        <artifactId>Saxon-HE</artifactId>
+                        <version>${saxon.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>${project.build.directory}/generated-resources/xml/xslt</directory>
+            </resource>
+        </resources>
     </build>
 </project>

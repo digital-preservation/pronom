@@ -20,6 +20,14 @@
         <name>The National Archives</name>
         <url>http://www.nationalarchives.gov.uk</url>
     </organization>
+
+    <licenses>
+        <license>
+            <name>Open Government Licence version 2.0</name>
+            <url>http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
     
     <developers>
         <developer>
@@ -36,6 +44,7 @@
     <properties>
         <project.pronom.url>http://www.nationalarchives.gov.uk/PRONOM/Default.aspx</project.pronom.url>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <saxon.version>9.5.1-2</saxon.version>
     </properties>
     
     <build>
@@ -47,9 +56,19 @@
                     <version>2.6</version>
                 </plugin>
                 <plugin>
+                    <groupId>com.mycila</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>2.5</version>
+                </plugin>
+                <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>wagon-maven-plugin</artifactId>
                     <version>1.0-beta-4</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>xml-maven-plugin</artifactId>
+                    <version>1.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -76,6 +95,27 @@
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <configuration>
+                    <header>LICENSE</header>
+                    <excludes>
+                        <exclude>**/pom.xml</exclude>
+                        <exclude>README.md</exclude>
+                        <exclude>LICENSE</exclude>
+                        <exclude>.idea/**</exclude>
+                        <exclude>*.iml</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
