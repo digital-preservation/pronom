@@ -26,6 +26,7 @@
         <module>pronom-parent</module>
         <module>pronom-signature-file</module>
         <module>pronom-container-signature-file</module>
+        <module>pronom-signature-files</module>
     </modules>
     
 </project>

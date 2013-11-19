@@ -13,7 +13,8 @@
     <packaging>jar</packaging>
     
     <!-- change this to get a newer signature file from PRONOM -->
-    <version>71-SNAPSHOT</version>       
+    <!-- set to '-SNAPSHOT' before release, but will only build without -->
+    <version>72-SNAPSHOT</version>
     
     
     <name>${project.artifactId}</name>
@@ -60,7 +61,7 @@
                     <transformationSets>
                         <transformationSet>
                             <dir>${project.build.directory}/generated-resources/wagon</dir>
-                            <stylesheet>add-licence.xslt</stylesheet>
+                            <stylesheet>${project.basedir}/../pronom-parent/add-licence.xslt</stylesheet>
                         </transformationSet>
                     </transformationSets>
                 </configuration>
