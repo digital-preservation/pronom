@@ -108,6 +108,8 @@
                         <exclude>LICENSE</exclude>
                         <exclude>.idea/**</exclude>
                         <exclude>*.iml</exclude>
+                        <exclude>**/assembly/**</exclude>
+                        <exclude>**/*.properties</exclude>
                     </excludes>
                 </configuration>
                 <executions>

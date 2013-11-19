@@ -12,8 +12,8 @@
     <artifactId>pronom-container-signature-file</artifactId>
     <packaging>jar</packaging>
     
-    <!-- change this to get a newer container signature file from PRONOM -->
-    <version>20130502-SNAPSHOT</version>       
+    <!-- change this to reflect the version of the container signature file from PRONOM -->
+    <version>20131112-SNAPSHOT</version>
     
     
     <name>${project.artifactId}</name>
@@ -60,7 +60,7 @@
                     <transformationSets>
                         <transformationSet>
                             <dir>${project.build.directory}/generated-resources/wagon</dir>
-                            <stylesheet>add-licence.xslt</stylesheet>
+                            <stylesheet>${project.basedir}/../pronom-parent/add-licence.xslt</stylesheet>
                         </transformationSet>
                     </transformationSets>
                 </configuration>
