@@ -7,17 +7,13 @@
     </formats>
     <includeBaseDirectory>false</includeBaseDirectory>
 
-    <fileSets>
-
-        <fileSet>
-            <directory>${project.build.directory}/generated-resources/xml/xslt</directory>
-            <includes>
-                <include>container-signature-file.xml</include>
-                <include>signature-file.xml</include>
-            </includes>
+    <dependencySets>
+         <dependencySet>
             <outputDirectory>/</outputDirectory>
-        </fileSet>
-
-    </fileSets>
+            <useProjectArtifact>true</useProjectArtifact>
+            <unpack>true</unpack>
+            <scope>runtime</scope>
+         </dependencySet>
+    </dependencySets>
 
 </assembly>

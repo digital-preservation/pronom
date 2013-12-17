@@ -20,40 +20,24 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies> 
+        <dependency> 
+            <groupId>${project.groupId}</groupId> 
+            <artifactId>pronom-signature-file</artifactId> 
+            <version>LATEST</version> 
+            <scope>runtime</scope> 
+        </dependency> 
+        <dependency> 
+            <groupId>${project.groupId}</groupId> 
+            <artifactId>pronom-container-signature-file</artifactId> 
+            <version>LATEST</version> 
+            <scope>runtime</scope> 
+        </dependency> 
+    </dependencies>
+
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>xml-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>transform</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <transformationSets>
-                        <transformationSet>
-                            <dir>${project.basedir}/../pronom-container-signature-file/target/generated-resources/wagon</dir>
-                            <stylesheet>${project.basedir}/../pronom-parent/add-licence.xslt</stylesheet>
-                        </transformationSet>
-                        <transformationSet>
-                            <dir>${project.basedir}/../pronom-signature-file/target/generated-resources/wagon</dir>
-                            <stylesheet>${project.basedir}/../pronom-parent/add-licence.xslt</stylesheet>
-                        </transformationSet>
-                    </transformationSets>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>net.sf.saxon</groupId>
-                        <artifactId>Saxon-HE</artifactId>
-                        <version>${saxon.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.4</version>

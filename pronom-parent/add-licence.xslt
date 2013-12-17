@@ -5,15 +5,7 @@
     
     <xsl:output indent="yes" encoding="UTF-8" omit-xml-declaration="no"/>
     
-    <xsl:template match="sf:FFSignatureFile">
-        <xsl:comment><xsl:value-of select="unparsed-text('../LICENSE')"/></xsl:comment>
-        
-        <xsl:copy>
-            <xsl:apply-templates select="@*|node()"/>
-        </xsl:copy>
-    </xsl:template>
-
-    <xsl:template match="ContainerSignatureMapping">
+    <xsl:template match="sf:FFSignatureFile | ContainerSignatureMapping">
         <xsl:comment><xsl:value-of select="unparsed-text('../LICENSE')"/></xsl:comment>
         
         <xsl:copy>
